@@ -727,7 +727,7 @@ async function changeCwd(
 				`cwd ${displayPath(from)} → ${displayPath(newCtx.cwd)}  (${modeLabel})`,
 				"info",
 			);
-			newCtx.ui.setStatus("pi-cd", displayPath(newCtx.cwd));
+			newCtx.ui.setStatus("pi-cd", undefined);
 		},
 	});
 
@@ -753,7 +753,7 @@ export default function piCdExtension(pi: ExtensionAPI) {
 		} catch {
 			// ignore
 		}
-		ctx.ui.setStatus("pi-cd", displayPath(ctx.cwd));
+		ctx.ui.setStatus("pi-cd", undefined);
 	});
 
 	pi.registerCommand("cd", {
